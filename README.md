@@ -1,62 +1,69 @@
 
 # Customer Churn Prediction using Machine Learning 🚀
 
-This project predicts customer churn (i.e., whether a customer will leave the company or not) based on customer usage behavior and services. It uses machine learning models trained on the popular Telco Customer Churn dataset.
-
-## 📂 Project Files
-
-| File/Folder                  | Description                                      |
-|-----------------------------|--------------------------------------------------|
-| `main.ipynb`                | Main Jupyter Notebook with all code              |
-| `random_forest_model.pkl`   | Trained Random Forest model                      |
-| `label_encoders.pkl`        | Encoders used to preprocess categorical data     |
-| `WA_Fn-UseC_-Telco-Customer-Churn.csv` | Original dataset                         |
+**Predicting which customers are likely to leave a telecom service using machine learning.**
 
 ---
 
-## 🧠 Problem Statement
+### 💼 Problem Statement
 
-The goal is to build a machine learning model to:
-- Predict whether a customer will **churn (leave)** or **stay**.
-- Use features like gender, services subscribed, tenure, charges, etc.
-
----
-
-## 📊 Dataset Info
-
-- Source: IBM Sample Dataset
-- Records: 7043
-- Features: 19 input features + target `Churn` (Yes/No)
+Telecom companies face huge losses when customers leave (churn).  
+Retaining old customers is cheaper than getting new ones.  
+This app helps predict which customers are at risk so the company can act early.
 
 ---
 
-## ✅ Workflow Summary
+### 📊 Dataset Info
 
-1. **Data Preprocessing**
-   - Missing value handling
-   - Label Encoding (`label_encoders.pkl`)
-   - Feature selection
-
-2. **Model Training**
-   - SMOTE applied to balance classes
-   - Random Forest used as final model
-   - Cross-validation applied for accuracy check
-
-3. **Model Saving**
-   - `random_forest_model.pkl` for model
-   - `label_encoders.pkl` for encoders
-
-4. **Prediction Pipeline**
-   - Load model + encoders
-   - Take new customer input
-   - Predict churn
+- **Source:** Telco Customer Churn Dataset (Kaggle)  
+- **Total Customers:** 7,043  
+- **Target Variable:** `Churn` (Yes/No)  
+- **Features:**  
+  - Demographics (Gender, Senior Citizen, etc.)  
+  - Services used (Internet, Streaming, etc.)  
+  - Account details (Tenure, Monthly Charges, Contract Type, etc.)  
+- **Class Split:**  
+  - 26.5% Churned  
+  - 73.5% Retained
 
 ---
 
-## 📦 How to Use
+### 🔧 What This App Does
 
-### 🔧 Step 1: Clone this repo
+- Takes customer info as input (via Streamlit form)
+- Applies same **Label Encoding** used during model training
+- Uses a pre-trained **Random Forest model**
+- Shows real-time prediction: Will customer churn or not?
+
+---
+
+### 🧠 Machine Learning Details
+
+- Used **Random Forest Classifier**
+- Handled class imbalance using **SMOTE**
+- Encoded all categorical columns with **LabelEncoder**
+- Model trained and saved using `joblib`
+- Input features reordered to match training data
+- App deployed using **Streamlit**
+
+---
+
+### 🛠️ Tech Stack
+
+- Python  
+- Pandas, NumPy  
+- Scikit-learn  
+- Imbalanced-learn (SMOTE)  
+- Streamlit  
+- Joblib
+
+---
+
+### ▶️ How to Run
 
 ```bash
-git clone https://github.com/yourusername/customer-churn-predictor.git
-cd customer-churn-predictor
+git clone https://github.com/yourusername/Customer-Churn-Prediction-using-Machine-Learning.git
+cd Customer-Churn-Prediction-using-Machine-Learning
+pip install -r requirements.txt
+streamlit run app.py
+
