@@ -2,6 +2,7 @@
 # Customer Churn Prediction using Machine Learning 🚀
 
 **Predicting which customers are likely to leave a telecom service using machine learning.**
+## Live : https://customer-churn-prediction-using-machine-learning.streamlit.app/
 
 ---
 
